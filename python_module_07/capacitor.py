@@ -20,7 +20,7 @@ def test_transform(factory: TransformCreatureFactory) -> None:
     base = factory.create_base()
     evolved = factory.create_evolved()
 
-    print(f"Testing Creature with transforming capability base:"
+    print(f"Testing Creature with transform capability base: "
           f"{base.describe()}")
     print(base.attack())
     print(base.transform())
