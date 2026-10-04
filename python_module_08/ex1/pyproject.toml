@@ -1,0 +1,18 @@
+[project] 
+name = "matrix-loading" 
+version = "1.0.0" 
+description = "Matrix data analysis and visualization" 
+authors = [
+     { name = "Abdelaziz Ahmamou" } 
+] 
+requires-python = ">=3.10" 
+dependencies = [
+    "pandas", 
+    "numpy", 
+    "matplotlib", 
+] 
+[tool.poetry]
+package-mode = false
+[build-system] 
+requires = ["poetry-core>=2.0.0"] 
+build-backend = "poetry.core.masonry.api"
