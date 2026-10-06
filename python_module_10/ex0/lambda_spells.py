@@ -30,3 +30,49 @@ def mage_stats(mages: list[dict]) -> dict:
         "min_power": min(powers),
         "avg_power": round(sum(powers) / len(powers), 2),
     }
+
+
+def main() -> None:
+    artifacts = [
+        {"name": "Crystal Orb", "power": 85, "type": "focus"},
+        {"name": "Fire Staff", "power": 92, "type": "weapon"},
+        {"name": "Ancient Wand", "power": 78, "type": "relic"}
+    ]
+
+    mages = [
+        {"name": "Aeris", "power": 72, "element": "air"},
+        {"name": "Ignis", "power": 95, "element": "fire"},
+        {"name": "Terra", "power": 61, "element": "earth"},
+        {"name": "Aqua", "power": 84, "element": "water"}
+    ]
+
+    spells = ["fireball", "heal", "shield"]
+
+    print("Testing artifact sorter...")
+    sorted_artifacts = artifact_sorter(artifacts)
+    print(
+        f"{sorted_artifacts[0]['name']} "
+        f"({sorted_artifacts[0]['power']} power) comes before "
+        f"{sorted_artifacts[1]['name']} "
+        f"({sorted_artifacts[1]['power']} power)"
+    )
+
+    print("\nTesting power filter...")
+    strong_mages = power_filter(mages, 80)
+    print(f"Mages with power >= 80: {[m['name'] for m in strong_mages]}")
+
+    print("\nTesting spell transformer...")
+    transformed_spells = spell_transformer(spells)
+    print(" ".join(transformed_spells))
+
+    print("\nTesting mage stats...")
+    stats = mage_stats(mages)
+    print(
+        f"Max power: {stats['max_power']}, "
+        f"Min power: {stats['min_power']}, "
+        f"Avg power: {stats['avg_power']}"
+    )
+
+
+if __name__ == "__main__":
+    main()
